@@ -1,6 +1,7 @@
 import BasicProps from "./components/BasicProps";
 import ChildrenProps from "./components/ChildrenProps";
 import ComplexProps from "./components/ComplexProps";
+import RefProps from "./components/RefProps";
 const isDark = true;
 function Navigation() {
   const section = [
@@ -51,6 +52,9 @@ function AppContent() {
         </div>
         <div>
           <ComplexProps />
+        </div>
+        <div>
+          <RefProps />
         </div>
       </main>
     </div>
