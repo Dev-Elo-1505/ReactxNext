@@ -2,6 +2,7 @@ import BasicProps from "./components/BasicProps";
 import ChildrenProps from "./components/ChildrenProps";
 import ComplexProps from "./components/ComplexProps";
 import RefProps from "./components/RefProps";
+import ThemeToggler, { ThemeProvider } from "./components/ThemeToggler";
 const isDark = true;
 function Navigation() {
   const section = [
@@ -56,6 +57,9 @@ function AppContent() {
         <div>
           <RefProps />
         </div>
+        <div id="basic" className="scroll-mt-200">
+                    <ThemeToggler />
+                  </div>
       </main>
     </div>
   );
@@ -64,7 +68,10 @@ function AppContent() {
 function App() {
   return (
     <>
+    <ThemeProvider>
       <AppContent />
+    </ThemeProvider>
+      
     </>
   );
 }

@@ -1,13 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const RefProps = () => {
-  const searchRef = useRef<HTMLInputElement>(null);
+  const countRef = useRef(0);
 
-  useEffect(() => {
-    if (searchRef.current) {
-      searchRef.current.focus();
-    }
-  }, [])
+  const trackCount = () => {
+    countRef.current += 1;
+    console.log(countRef.current);
+  }
 
   return (
     <section className="p-4 bg-white mb-4 rounded-md">
@@ -17,9 +16,10 @@ const RefProps = () => {
         across renders without causing re-renders when it changes. It returns an
         object with a single .current property.
       </p>
-      <div className="bg-gray-100 rounded-full p-2 flex items-center">
-        <input type="text" placeholder="Search for roles" className="w-full ml-4 focus:outline-0" ref={searchRef} />
-      </div>
+      
+        
+      <button className="ml-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors" onClick={trackCount}>Click me</button>
+      <button className="ml-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors" onClick={() => alert(countRef.current)}>Show Count</button>
     </section>
   );
 };
