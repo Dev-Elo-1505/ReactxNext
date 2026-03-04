@@ -1,9 +1,12 @@
 import CartItem from "./CartItem";
 
-export type CartItemType = {
+export type ProductType = {
   id: number;
   name: string;
   price: number;
+};
+
+export type CartItemType = ProductType & {
   quantity: number;
 };
 

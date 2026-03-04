@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { type UserProfileCardProps } from "../types/complexTypes";
+import { type UserProfileCardProps } from "../../types/complexTypes";
 
 function UserProfileCard({ user, theme, actions }: UserProfileCardProps) {
   return (
